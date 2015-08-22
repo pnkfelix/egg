@@ -59,7 +59,7 @@
 (require 'egg-custom)
 (require 'ediff)
 
-(autoload 'edmacro-subseq "edmacro" "Return the subsequence of SEQ from START to END.")
+;(autoload 'edmacro-subseq "edmacro" "Return the subsequence of SEQ from START to END.")
 
 ;;;========================================================
 ;;; simple routines
@@ -81,7 +81,7 @@ if DONE then stops the loop and return DONE.
        ,(nth 2 spec))))
 
 ;; avoid cl
-(defsubst subseq (seq start &optional end) (edmacro-subseq seq start end))
+(defsubst subseq (seq start &optional end) (cl-subseq seq start end))
 
 (defun egg-find-if (predicate seq)
   (dolist-done (item seq found)
